@@ -13,7 +13,6 @@ source:
 
 build:
   number: 1
-  skip: true  # [win]
 
 requirements:
   build:
@@ -26,6 +25,8 @@ test:
   commands:
     - test -f ${PREFIX}/lib/libqjson-qt5.so  # [linux]
     - test -f ${PREFIX}/lib/libqjson-qt5.dylib  # [osx]
+    - if not exist %LIBRARY_BIN%\\qjson-qt5.dll exit 1  # [win]
+    - if not exist %LIBRARY_LIB%\\qjson-qt5.lib exit 1  # [win]
 
 about:
   home: http://qjson.sourceforge.net/ 
