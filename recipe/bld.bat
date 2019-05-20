@@ -1,12 +1,16 @@
 
-mkdir build
-cd build
+mkdir build && cd build
 
-cmake -G "NMake Makefiles" -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% -D CMAKE_BUILD_TYPE=Release ..
+cmake -G "NMake Makefiles" ^
+      -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
+      -D CMAKE_BUILD_TYPE=Release ^
+      %SRC_DIR%
 if errorlevel 1 exit 1
 
 nmake
 if errorlevel 1 exit 1
+
 :: No "make check" available
+
 nmake install
 if errorlevel 1 exit 1
