@@ -4,8 +4,8 @@
 cd build/
 
 cmake \
-    -DCMAKE_INSTALL_PREFIX=$PREFIX \
-    ..
+    -D CMAKE_INSTALL_PREFIX=$PREFIX \
+    $SRC_DIR
 
 make
 # No "make check" available

@@ -1,18 +1,15 @@
-{% set name = "qjson" %}
 {% set version = "0.9.0" %}
-{% set sha256 = "e812617477f3c2bb990561767a4cd8b1d3803a52018d4878da302529552610d4" %}
 
 package:
-  name: {{ name|lower }}
+  name: qjson
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/flavio/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://github.com/flavio/qjson/archive/{{ version }}.tar.gz
+  sha256: e812617477f3c2bb990561767a4cd8b1d3803a52018d4878da302529552610d4
 
 build:
-  number: 1004
+  number: 1005
 
 requirements:
   build:
@@ -26,14 +23,13 @@ requirements:
 
 test:
   commands:
-    - test -f ${PREFIX}/lib/libqjson-qt5.so  # [linux]
-    - test -f ${PREFIX}/lib/libqjson-qt5.dylib  # [osx]
+    - test -f ${PREFIX}/lib/libqjson-qt5${SHLIB_EXT}  # [not win]
     - if not exist %LIBRARY_BIN%\\qjson-qt5.dll exit 1  # [win]
     - if not exist %LIBRARY_LIB%\\qjson-qt5.lib exit 1  # [win]
 
 about:
   home: http://qjson.sourceforge.net/
-  license: LGPLv2.1
+  license: LGPL-2.1
   license_file: README.license
   summary: 'QJson is a qt-based library that maps JSON data to QVariant objects'
   description: |
