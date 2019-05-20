@@ -3,7 +3,7 @@ About qjson
 
 Home: http://qjson.sourceforge.net/
 
-Package license: LGPLv2.1
+Package license: LGPL-2.1
 
 Feedstock license: BSD 3-Clause
 
