@@ -1,9 +1,9 @@
 About qjson
 ===========
 
-Home: http://qjson.sourceforge.net/
+Home: https://github.com/flavio/qjsonhttp://qjson.sourceforge.net/
 
-Package license: LGPL-2.1
+Package license: LGPL-2.1-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/qjson-feedstock/blob/main/LICENSE.txt)
 
