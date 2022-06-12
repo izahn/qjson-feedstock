@@ -17,6 +17,7 @@ build:
 requirements:
   build:
     - cmake
+    - make  # [linux]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
@@ -31,8 +32,8 @@ test:
     - if not exist %LIBRARY_LIB%\\qjson-qt5.lib exit 1  # [win]
 
 about:
-  home: http://qjson.sourceforge.net/
-  license: LGPL-2.1
+  home: https://github.com/flavio/qjsonhttp://qjson.sourceforge.net/
+  license: LGPL-2.1-only
   license_file: README.license
   summary: 'QJson is a qt-based library that maps JSON data to QVariant objects'
   description: |
